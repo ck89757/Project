@@ -19,4 +19,3 @@ PrefixHeader.pch定义了常用的宏
 //Toast类似于安卓手机的toast提示。
 
 [Toast showMessage:@"测试一下"];
-000000000
