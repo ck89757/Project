@@ -1,0 +1,88 @@
+//
+//  PrefixHeader.pch
+//  Project
+//
+//  Created by kain on 16/6/2.
+//  Copyright © 2016年 kain. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#define AFNETWORKING_ALLOW_INVALID_SSL_CERTIFICATES
+#define TimeoutInterval 15
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+
+/*!
+ *  @author kain, 16-06-03 14:06:19
+ *
+ *  @brief 引入工具类
+ */
+
+#import "AFNetworking.h"//AFNetworking
+#import "UIKit+AFNetworking.h"//AFNetworking工具包
+#import "MBProgressHUD.h"//动态提示器
+#import "Toast.h"//类似安卓的提示器
+#import "MJRefresh.h"//下拉刷新
+#import "JSONKit.h"//json解析
+#import "Masonry.h"//第三方布局框架
+#import "HttpKit.h"//网络请求封装类
+
+
+/*!
+ *  @author kain, 16-06-03 14:06:53
+ *
+ *  @brief 宏定义
+ */
+
+
+//获取屏幕 宽度、高度
+#define IPHONE_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define IPHONE_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+// 是否iPad
+#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+//判断当前设备是不是iphone5
+#define isIphone5    ((［UIScreen mainScreen] bounds].size.height)>=568)
+//判断设备的操做系统是不是大于ios7
+#define IOS7 (［[UIDevice currentDevice].systemVersion doubleValue] >= 7.0]
+
+//获取系统版本
+#define IOS_VERSION ［[UIDevice currentDevice] systemVersion] floatValue]
+#define CurrentSystemVersion ［UIDevice currentDevice] systemVersion]
+
+
+
+// 获取RGB颜色
+#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGB(r,g,b) RGBA(r,g,b,1.0f)
+
+//字体定义
+#define FONT(F) [UIFont fontWithName:@"FZHTJW--GB1-0" size:F]
+
+
+
+//重写NSLog,Debug模式下打印日志和当前行数
+#ifndef __OPTIMIZE__
+#define NSLog(fmt,...) NSLog((@"log:<%s-第%d行-函数:%s>\n" fmt), strrchr(__FILE__,'/'),__LINE__,__FUNCTION__,##__VA_ARGS__);
+#else
+#define NSLog(...) {}
+#endif
+/*!
+ *  @author kain, 16-06-03 14:06:08
+ *
+ *  @brief 导入类
+ */
+
+#import "BaseViewController.h"
+
+
+
+
+#endif /* PrefixHeader_pch */
